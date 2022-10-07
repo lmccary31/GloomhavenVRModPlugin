@@ -1,0 +1,171 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <AssemblyName>GloomhavenVRModPlugin</AssemblyName>
+    <Description>My first plugin</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Reference Include="0Harmony">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\0Harmony.dll</HintPath>
+	</Reference>
+	<Reference Include="0Harmony20">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\0Harmony20.dll</HintPath>
+	</Reference>
+	<Reference Include="BepInEx">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\BepInEx.dll</HintPath>
+	</Reference>
+	<Reference Include="BepInEx.Harmony">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\BepInEx.Harmony.dll</HintPath>
+	</Reference>
+	<Reference Include="BepInEx.Preloader">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\BepInEx.Preloader.dll</HintPath>
+	</Reference>
+	<Reference Include="HarmonyXInterop">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\HarmonyXInterop.dll</HintPath>
+	</Reference>
+	<Reference Include="Mono.Cecil">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\Mono.Cecil.dll</HintPath>
+	</Reference>
+	<Reference Include="Mono.Cecil.Mdb">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+	</Reference>
+	<Reference Include="Mono.Cecil.Pdb">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+	</Reference>
+	<Reference Include="Mono.Cecil.Rocks">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+	</Reference>
+	<Reference Include="MonoMod.RuntimeDetour">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+	</Reference>
+	<Reference Include="MonoMod.Utils">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\BepInEx\core\MonoMod.Utils.dll</HintPath>
+	</Reference>
+	<Reference Include="netstandard">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\netstandard.dll</HintPath>
+	</Reference>
+	<Reference Include="SteamVR">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\SteamVR.dll</HintPath>
+	</Reference>
+	<Reference Include="SteamVR_Actions">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\SteamVR_Actions.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.Timeline">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.Timeline.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.Management">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.Management.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.OpenVR">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.OpenVR.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.OpenXR">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.OpenXR.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.OpenXR.Features.MockRuntime">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
+	</Reference>
+	<Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor.XR.LegacyInputHelpers">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.AccessibilityModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.AIModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.AnimationModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.ARModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.AssetBundleModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.AudioModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.ClothModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.ClusterInputModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.ClusterRendererModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.CrashReportingModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.DirectorModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.SubsystemsModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.UI">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.UI.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.UIElementsModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.UIElementsNativeModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.UIModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.VehiclesModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.VirtualTexturingModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.VRModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.XR.LegacyInputHelpers">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.XRModule">
+	  <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityOpenXR">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Plugins\x86_64\UnityOpenXR.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+	<Reference Include="UnityEngine.CoreModule">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Gloomhaven\GH_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+</Project>
